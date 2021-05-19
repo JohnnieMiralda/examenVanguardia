@@ -26,11 +26,11 @@ export class ResumenComponent implements OnInit {
   getInfo(){
     this.transactions.forEach((item) =>{  
       var rate=this.accounts?.find(p => p.Id == item.AccountId)?.ConversionRate
-      if(item.Amount >0)     
+      if(item.Amount >0){     
         if(rate){
           this.income = this.income + (item.Amount * rate ); 
         }
-              
+      }
       else         
         if(rate){
           this.income = this.income + (item.Amount * rate ); 

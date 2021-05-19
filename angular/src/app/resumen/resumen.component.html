@@ -8,13 +8,13 @@
             <div class="table-responsive col-sm-6">
                 <div class="container mx-auto">
                     <p [ngStyle] = "{'color' : 'green'}">
-                        Incomes {{income}}
+                        Incomes {{income | currency:"USD"}}
                     </p>
                     <p [ngStyle] = "{'color' : 'red'}">
-                        Expenses {{expenses}}
+                        Expenses {{expenses | currency:"USD"}}
                     </p>
                     <p [ngStyle]= "{'color':(total > 0 ? 'green': 'red')}">
-                        Total {{total}}
+                        Total {{total | currency:"USD"}}
                     </p>
                 </div>
             </div>
