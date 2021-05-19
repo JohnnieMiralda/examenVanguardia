@@ -1,0 +1,44 @@
+<br>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ title }}
+        </h2>
+        <div class="card-text">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Titulo</th>
+                        <th>Nombre</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let trans of transactions">
+                            <td>
+                                <tr>
+                                    {{ trans.Description | uppercase}}
+                                </tr>
+                                <tr>
+                                    {{ GetNombreCuenta(trans.AccountId) }}
+                                </tr>
+                            </td>
+                            <td>
+                                <tr>
+                                    <p [ngStyle]= "{'color':(trans.Amount > 0 ? 'green': 'red')}">
+                                        {{ trans.Amount | currency: GetCurrency(trans.AccountId):'symbol'}}
+                                    </p>
+                                </tr>
+                                <tr>
+                                    {{ trans.TrasactionDate }}
+                                </tr>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container col-sm-6">
+    <button type="button" class="btn btn-danger">Transaccion</button>
+</div>

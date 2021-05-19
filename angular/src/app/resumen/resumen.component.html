@@ -1,0 +1,23 @@
+<br>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ title }}
+        </h2>
+        <div class="card-text">
+            <div class="table-responsive col-sm-6">
+                <div class="container mx-auto">
+                    <p [ngStyle] = "{'color' : 'green'}">
+                        Incomes {{income}}
+                    </p>
+                    <p [ngStyle] = "{'color' : 'red'}">
+                        Expenses {{expenses}}
+                    </p>
+                    <p [ngStyle]= "{'color':(total > 0 ? 'green': 'red')}">
+                        Total {{total}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

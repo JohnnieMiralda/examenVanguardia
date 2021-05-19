@@ -1,0 +1,24 @@
+<br>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ title }}
+        </h2>
+        <div class="card-text">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Descripcion</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let acount of acounts">
+                            <td>{{ acount.Name | uppercase}}</td>
+                            <td>{{ acount.Amount |  currency:acount.Currency:"symbol"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
